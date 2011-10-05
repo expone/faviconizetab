@@ -21,6 +21,16 @@ var faviconize = {
    enable: function(tab) {
       tab._oldMinWidth = tab.minWidth || gBrowser.mTabContainer.mTabMinWidth;
       tab._oldMaxWidth = tab.maxWidth || 250;
+      
+      
+      // 2011-10-05 BEGIN: Changed by expone
+      // #############################################################################
+      // Moves each FaviconizedTab to the left side in Tab-Bar.
+      // This should be outsourced as a option in settings dialog.
+      getBrowser().moveTabTo(tab, 0);
+      // #############################################################################
+      // 2011-10-05 END: Changed by expone
+
 
       tab.setAttribute('faviconized', true);
       tab.minWidth  = '';
